@@ -7,4 +7,9 @@ public class App {
 
 	}
 
+	public void asd()
+	{
+		
+	}
+
 }
