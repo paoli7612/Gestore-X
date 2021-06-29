@@ -21,4 +21,14 @@ public class Data {
 		System.out.println(this.toString());
 	}
 	
+	private Integer toInteger() {
+		return anno*365 + mese*30 + giorno;
+	}
+	
+	public int compare(Data data) {
+		
+		return this.toInteger() - data.toInteger();
+	
+	}
+	
 }
