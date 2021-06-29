@@ -1,3 +1,5 @@
 *.class
 /bin/
 .metadata/
+doc/html/*
+doc/latex/*
