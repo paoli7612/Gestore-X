@@ -2,28 +2,28 @@
 
 ### Regole per lo svolgimento
 
-    - Obbligo di uso linguaggio **Java**
-    - Interfaccia grafica app desktop
-    - Meccanismi OOP
-        - Incapsulamento
-        - Ereditarietà
-        - Polimorfismo
-        - ...
-    - Vietata ereditarietà diretta da librerie Java
-    - Usare classi di sistema per input/output
-    - Usare **strutture dati** di libreria e i **generics**
-    - Eseguibile anche da CLI
-    - Presente documentazione HTML
+- Obbligo di uso linguaggio **Java**
+- Interfaccia grafica app desktop
+- Meccanismi OOP
+    - Incapsulamento
+    - Ereditarietà
+    - Polimorfismo
+    - ...
+- Vietata ereditarietà diretta da librerie Java
+- Usare classi di sistema per input/output
+- Usare **strutture dati** di libreria e i **generics**
+- Eseguibile anche da CLI
+- Presente documentazione HTML
 
 ### Descrizione del progetto
 
-    Si richiede l’implementazione di un software per la gestione di spedizioni tramite corriere.
+Si richiede l’implementazione di un software per la gestione di spedizioni tramite corriere.
 
-    Progetto munito delle seguenti funzionalità:
-        - **Login e registrazione** dei clienti che inseriscono i dati delle loro spedizioni
-        - **Login specifico per l’amministratore** (admin) della filiale di spedizione
-        - ***Possibilità** di aggiornare lo stato di ogni singola spedizione
-        - **Visualizzazioni personalizzate** (per clienti e amministratori) dello storico delle spedizioni e delle spedizioni in corso.
+Progetto munito delle seguenti funzionalità:
+    - **Login e registrazione** dei clienti che inseriscono i dati delle loro spedizioni
+    - **Login specifico per l’amministratore** (admin) della filiale di spedizione
+    - ***Possibilità** di aggiornare lo stato di ogni singola spedizione
+    - **Visualizzazioni personalizzate** (per clienti e amministratori) dello storico delle spedizioni e delle spedizioni in corso.
 
 [Facoltativo 1 punto: per la data di immissione nel sistema si sfrutti la classe java.util.Date e
 java.text.SimpleDateFormat dello standard JDK.]
