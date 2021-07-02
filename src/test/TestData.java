@@ -11,6 +11,7 @@ public class TestData extends Test {
 		Data e = new Data(17, 7, 2001);
 		
 		d.print();
+		e.print();
 		
 		System.out.println(e.compare(d));
 		
