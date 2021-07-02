@@ -1,34 +1,23 @@
 package utils;
 
-public class Data {
+import java.util.Date;
+
+
+public class Data extends Date{
 	
-	private Integer giorno, mese, anno;
-	
+	@SuppressWarnings("deprecation")
 	public Data(Integer giorno, Integer mese, Integer anno) {
+		super (anno, mese, giorno);
+	}
 		
-		this.giorno = giorno;
-		this.mese = mese;
-		this.anno = anno;
-		
+	public int compare(Data other)
+	{
+		return (int) (this.getTime() - other.getTime());
 	}
 	
-	public String toString() {
-		String out = giorno + "/" + mese + "/" + anno;
-		return out;
-	}
-	
+	@SuppressWarnings("deprecation")
 	public void print() {
-		System.out.println(this.toString());
+		System.out.println(getDate() +"/"+ getMonth() +"/"+ getYear());
 	}
-	
-	private Integer toInteger() {
-		return anno*365 + mese*30 + giorno;
-	}
-	
-	public int compare(Data data) {
 		
-		return this.toInteger() - data.toInteger();
-	
-	}
-	
 }
