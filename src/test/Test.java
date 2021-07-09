@@ -34,6 +34,10 @@ public class Test
 		case "Data":
 			new TestData();
 			break;
+		
+		case "Memoria":
+			new TestMemoria();
+			break;
 			
 		default:
 			System.out.println("Nome classa da testare non presente");
