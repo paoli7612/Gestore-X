@@ -59,4 +59,10 @@ public class Persona {
 		System.out.println(this.toString());
 	}
 	
+	public byte[] toBytes() {
+		
+		return this.nome.getBytes();
+		
+	}
+	
 }
