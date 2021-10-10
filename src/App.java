@@ -2,27 +2,26 @@ import java.util.Scanner;
 
 public final class App {
 
-	static boolean login() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("LOGIN (y/n)");
-		return sc.nextLine().equals("y");
-	}
-	
-	static void menu() {
-		System.out.println("MENU");	
-	}
-	
-	static void exit() {
-		System.out.println("EXIT ...");
-	}
+	static String email;
+	static String password;
 	
 	public static void main(String[] args) {
 		
-		if (login()) {
-			menu();
+		if (args.length == 2) {
+			email = args[0];
+			password = args[1];
 		} else {
-			exit();
+			
+			Scanner sc = new Scanner(System.in);
+			
+			System.out.print("email:    ");
+			email = sc.nextLine();
+			System.out.print("password: ");
+			password = sc.nextLine();
 		}
+		
+		System.out.println("Email: " + email + " -  Password: " + password);
+		
 		
 	}
 
