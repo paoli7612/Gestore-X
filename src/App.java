@@ -1,13 +1,15 @@
 
 public class App {
 
-	public static void main(String[] args) {
+	private enum mode_t { CLI, WINDOW };
+	
+	public static void main(String[] args) throws Exception {
 		if (args.length == 1) {
 			String arg = args[0];
 			if (arg.equals("--cli") || arg.equals("-c")) {
-				System.out.println("Start app with cli");
+				run(mode_t.CLI);
 			} else if (arg.equals("--window") || arg.equals("-w")) {
-				System.out.println("Start app in graphic mode");
+				run(mode_t.WINDOW);
 			} else if (arg.equals("--help") || arg.equals("-h")) {
 				help();
 			} else {
@@ -15,6 +17,16 @@ public class App {
 			}
 		} else {
 			System.out.println("Start app in graphic mode");
+		}
+	}
+	
+	public static void run(mode_t mode) throws Exception {
+		if (mode == mode_t.CLI) {
+			System.out.println("Run app cli-mode");
+		} else if (mode == mode_t.WINDOW) {
+			System.out.println("Run app window-mode");
+		} else {
+			throw new Exception("Invalid run");
 		}
 	}
 	
