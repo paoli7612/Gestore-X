@@ -26,7 +26,7 @@ public class Login extends JFrame {
 			
 		JPanel body = new JPanel();
 			JPanel a_body = new JPanel();
-			a_body.setPreferredSize(new Dimension(400, 20));
+			a_body.setPreferredSize(new Dimension(400, 32));
 				JLabel lUsername = new JLabel("Username");
 				a_body.add(lUsername);
 				JTextField iUsername = new JTextField(16);
@@ -34,7 +34,7 @@ public class Login extends JFrame {
 			body.add(a_body, BorderLayout.NORTH);
 
 			JPanel b_body = new JPanel();
-			b_body.setPreferredSize(new Dimension(400, 20));
+			b_body.setPreferredSize(new Dimension(400, 32));
 				JLabel lPassword = new JLabel("Password");
 				b_body.add(lPassword);
 				JPasswordField iPassword = new JPasswordField(16);
@@ -43,6 +43,12 @@ public class Login extends JFrame {
 
 			JPanel c_body = new JPanel();
 				JButton bLogin = new JButton("Login");
+				bLogin.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						System.out.println(iUsername.getText());
+						System.out.println(iPassword.getPassword());
+					} 
+				});
 				c_body.add(bLogin, BorderLayout.SOUTH);
 			body.add(c_body, BorderLayout.SOUTH);
 
