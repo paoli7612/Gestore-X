@@ -1,6 +1,7 @@
 import java.sql.Date;
 
 import accountManager.Persona;
+import graphic.Register;
 
 public class App {
 
@@ -9,6 +10,8 @@ public class App {
 		persona.setMatricola("152542");
 		persona.setNascita("21/05/2000");
 		System.out.println(persona.toString());
+		
+		new Register();
 	}
 	
 }
