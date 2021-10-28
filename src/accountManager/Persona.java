@@ -39,6 +39,15 @@ public class Persona {
 		this.nascita = nascita;
 	}
 	
+	public void setNascita(Integer day, Integer month, Integer year) {
+		this.setNascita(new Date(year, month, day));
+	}
+	
+	public void setNascita(String nascita) {
+		String vv[] = nascita.split("/");
+		this.setNascita(Integer.parseInt(vv[0]), Integer.parseInt(vv[1])-1, Integer.parseInt(vv[2])-1900);
+	}
+	
 	public String getMatricola() {
 		String ret = "";
 		for (int i=0; i<6; i++)
@@ -54,9 +63,11 @@ public class Persona {
 	
 	@Override
 	public String toString() {
-		String ret = "<%s %s ".formatted(this.nome, this.cognome);
-		if (this.matricola != null)
-			ret += this.getMatricola();
+		String ret = "<%s %s".formatted(this.nome, this.cognome);
+		if (this.matricola[0] != 0)
+			ret += " " + this.getMatricola();
+		if (this.nascita != null)
+			ret += " " + this.nascita.toString();
 		return ret + ">";
 	}
 
