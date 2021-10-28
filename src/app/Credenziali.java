@@ -12,8 +12,13 @@ public class Credenziali {
 		this.password = password;	
 	}
 	
+	public boolean control(String username, String password) {
+		return (this.username.equals(username) || this.email.equals(email))
+				&& this.password.equals(password);
+	}
+	
 	@Override
 	public String toString() {
-		return this.email + " < " + this.username  + " >";
+		return this.email + " " + this.username  + "  " + this.password;
 	}
 }

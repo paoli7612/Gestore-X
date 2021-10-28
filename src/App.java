@@ -1,29 +1,18 @@
-import data.Saver;
-import manager.Account;
-import manager.Persona;
+
+import app.Account;
+import app.AccountGroup;
 
 public class App {
 
 	public static void main(String[] args) {
 
 		//new Home();
-		
 
-		try {
-
-			Account aa[] = new Account[2];
-			
-			aa[0] = new Account("Tommaso", "Paoli", "tomaoli@gmail.com", "qwerty");
-			aa[1] = new Account("Luca", "Nervi", "luca.nervi@gmail.com", "qwertyqwerty");
-			Saver saver = new Saver("C:/qwerty.txt");
-
-			saver.save(aa);
-			saver.close();
-			
-		} catch (Exception e) {
-			System.out.println(e.toString());
-		}
-		
+		AccountGroup ag = new AccountGroup();		
+		ag.add(new Account("Tommaso", "Paoli", "paoli7612@gmail.com", "tomaoli", "qwerty"));
+		ag.add(new Account("Luca", "Nervi", "lnervi@gmail.com", "lervi", "qwerty"));
+		ag.add(new Account("Paolo", "Bitta", "pbitta@gmail.com", "pitta", "qwerty"));
+		ag.save();
 	}
 
 }
