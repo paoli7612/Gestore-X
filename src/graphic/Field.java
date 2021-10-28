@@ -21,7 +21,7 @@ public class Field {
 		label = new JLabel(title);
 		
 		input.setHorizontalAlignment(SwingConstants.RIGHT);
-		
+
 		label.setPreferredSize(new DimensionUIResource(sWidth/4, 30));
 		input.setPreferredSize(new DimensionUIResource(sWidth/4, 30));
 		
