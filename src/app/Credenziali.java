@@ -12,6 +12,13 @@ public class Credenziali {
 		this.password = password;	
 	}
 	
+	public Credenziali(String row) {
+		String vv[] = row.split("\\|");
+		this.email = vv[0];
+		this.username = vv[1];
+		this.password = vv[2];
+	}
+	
 	public boolean control(String username, String password) {
 		return (this.username.equals(username) || this.email.equals(email))
 				&& this.password.equals(password);
@@ -20,5 +27,9 @@ public class Credenziali {
 	@Override
 	public String toString() {
 		return this.email + " " + this.username  + "  " + this.password;
+	}
+	
+	public String toFile() {
+		return this.email + "|" + this.username + "|" + this.password;
 	}
 }

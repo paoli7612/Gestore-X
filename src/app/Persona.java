@@ -10,8 +10,18 @@ public class Persona {
 		this.cognome = cognome;
 	}
 	
+	public Persona(String row) {
+		String vv[] = row.split("\\|");
+		this.nome = vv[0];
+		this.cognome = vv[1];
+	}
+	
 	@Override
 	public String toString() {
 		return nome + " " + cognome;
+	}
+	
+	public String toFile() {
+		return nome + "|" + cognome;
 	}
 }

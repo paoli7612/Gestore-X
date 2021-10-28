@@ -12,7 +12,7 @@ public class AccountGroup {
 	
 	public AccountGroup() {
 		accounts = new ArrayList<Account>();
-		data = new Data("./data/users.pt");
+		data = new Data("data/users.txt");
 	}
 	
 	public void add(Account account) {
@@ -27,7 +27,16 @@ public class AccountGroup {
 		}
 	}
 	
+	public void load() {
+		try {
+			data.load(this.accounts);
+		} catch (Exception e) {
+			System.out.println("Errore nel caricamento degli account dal file");
+		}
+	}
+	
 	public void print() {
+		System.out.println(this.toString());
 		for (int i=0; i<accounts.size(); i++) {
 			System.out.println(accounts.get(i).toString());
 		}
@@ -36,7 +45,6 @@ public class AccountGroup {
 	@Override
 	public String toString() {
 		return this.accounts.size() + " items";
-	}
-	
+	}	
 }
 

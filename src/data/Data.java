@@ -1,5 +1,6 @@
 package data;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -17,11 +18,9 @@ public class Data {
 	
 	public void save(List<Account> accounts) throws Exception {
 		FileWriter writer = new FileWriter(file);
-		
+		System.out.println(file.getAbsolutePath());
 		for (int i=0; i<accounts.size(); i++) {
-			writer.write(accounts.get(i).toString());
-			System.out.println(accounts.get(i).toString());
-			writer.write("\n");
+			writer.write(accounts.get(i).toFile());
 		}
 		
 		writer.close();
@@ -29,6 +28,16 @@ public class Data {
 	
 	public void load(List<Account> accounts) throws Exception {
 		FileReader reader = new FileReader(file);
+		BufferedReader breader = new BufferedReader(reader);
+		String row;
+		
+		do {
+			row = breader.readLine();
+			if (row != null) {				
+				System.out.println(new Account(row).toString());	
+			}
+		} while (row != null);
+		
 		
 		reader.close();
 	}
