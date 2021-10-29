@@ -2,6 +2,7 @@ package graphic;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
@@ -15,7 +16,7 @@ public abstract class Window extends JFrame implements ActionListener {
 	protected JPanel body;
 	private JPanel footer;
 	
-	public Window(String name) {
+	public Window(String name, String text_submit, boolean bback) {
 		super(name);
 		
 		header = new JPanel();
@@ -27,17 +28,38 @@ public abstract class Window extends JFrame implements ActionListener {
 		super.setVisible(true);
 		
 		
-		JLabel title = new JLabel("Register");
+		JLabel title = new JLabel(name);
 		title.setFont(new Font("Verdana", Font.BOLD, 42));
 		header.add(title);
 		
-		JButton submit = new JButton("Confirm");
-		submit.addActionListener(this);
-		footer.add(submit);
+		if (text_submit != null) {			
+			JButton submit = new JButton(text_submit);
+			submit.addActionListener(this);
+			footer.add(submit);
+		}
+		
+		if (bback) {			
+			JButton exit = new JButton("Back");
+			exit.addActionListener((ActionListener) new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					new Home();
+					dispose();
+				}
+			});
+			footer.add(exit);
+		}
 		
 		this.add(header, BorderLayout.NORTH);
 		this.add(body, BorderLayout.CENTER);
 		this.add(footer, BorderLayout.SOUTH);
 	}
 	
+	public Window(String name, String text_submit) {
+		this(name, text_submit, false);
+	}
+	
+	public Window(String name) {
+		this(name, null);
+	}
 }

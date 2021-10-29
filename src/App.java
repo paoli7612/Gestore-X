@@ -1,6 +1,7 @@
 import java.sql.Date;
 
 import accountManager.Persona;
+import graphic.Home;
 import graphic.Register;
 
 public class App {
@@ -11,7 +12,7 @@ public class App {
 		persona.setNascita("21/05/2000");
 		System.out.println(persona.toString());
 		
-		new Register();
+		new Home();
 	}
 	
 }
