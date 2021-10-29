@@ -2,38 +2,45 @@ package graphic;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.SpringLayout;
 import javax.swing.SwingConstants;
-import javax.swing.plaf.DimensionUIResource;
+import javax.swing.border.EmptyBorder;
+
+import java.awt.*;
 
 public class Field {
 
-	static JPanel sPanel = new JPanel();
-	static Integer sWidth;
-	
-	private JPanel panel;
+	static JPanel sPanel = new JPanel(new GridLayout(9, 2));
+
 	private JTextField input;
 	private JLabel label;
 	
-	public Field(String title) {
-		panel = new JPanel();
-		input = new JTextField();
+	public Field(String title, boolean isPassword) {
+		
+		if (isPassword) {
+			input = new JPasswordField(16);
+		} else {			
+			input = new JTextField(16);
+		}
 		label = new JLabel(title);
 		
+		input.setFont(new Font("Verdana", Font.PLAIN, 22));
 		input.setHorizontalAlignment(SwingConstants.RIGHT);
-
-		label.setPreferredSize(new DimensionUIResource(sWidth/4, 30));
-		input.setPreferredSize(new DimensionUIResource(sWidth/4, 30));
+		label.setFont(new Font("Verdana", Font.PLAIN, 22));
+		label.setHorizontalAlignment(SwingConstants.RIGHT);
+		label.setBorder(new EmptyBorder(0, 0, 0, 16));
 		
-		panel.add(label);
-		panel.add(input);
-		
-		panel.setPreferredSize(new DimensionUIResource(sWidth, 30));
-		
-		sPanel.add(panel);
+		sPanel.add(label);
+		sPanel.add(input);	
 	}
 	
-	public static void setWidth(Integer width) {
-		sWidth = width;
+	public Field(String title) {
+		this(title, false);
+	}
+		
+	public String getText() {
+		return this.input.getText();
 	}
 }
