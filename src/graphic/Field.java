@@ -12,12 +12,10 @@ import java.awt.*;
 
 public class Field {
 
-	static JPanel sPanel = new JPanel(new GridLayout(9, 2));
-
 	private JTextField input;
 	private JLabel label;
 	
-	public Field(String title, boolean isPassword) {
+	public Field(JPanel panel, String title, boolean isPassword) {
 		
 		if (isPassword) {
 			input = new JPasswordField(16);
@@ -32,12 +30,12 @@ public class Field {
 		label.setHorizontalAlignment(SwingConstants.RIGHT);
 		label.setBorder(new EmptyBorder(0, 0, 0, 16));
 		
-		sPanel.add(label);
-		sPanel.add(input);	
+		panel.add(label);
+		panel.add(input);
 	}
 	
-	public Field(String title) {
-		this(title, false);
+	public Field(JPanel panel, String title) {
+		this(panel, title, false);
 	}
 		
 	public String getText() {

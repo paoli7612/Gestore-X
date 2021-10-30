@@ -17,17 +17,16 @@ import accountManager.App;
 
 public class Login extends Window {
 
-
-	private Field fUsername;
-	private Field fPassword;
+	private FieldGroup fgroup;
 	
 	public Login(Home home) {
 		super("Login", "Confirm", true, home);
-						
-		fUsername = new Field("Username");
-		fPassword = new Field("Password", true);
 		
-		body.add(Field.sPanel);
+		fgroup = new FieldGroup(2);
+		fgroup.add("Username");
+		fgroup.add("Password", true);
+		
+		body.add(fgroup.getPanel());
 		super.setBounds(400, 300, 800, 400);
 	}
 

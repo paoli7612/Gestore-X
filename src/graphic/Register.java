@@ -16,36 +16,28 @@ import accountManager.Account;
 
 public class Register extends Window {
 
-	private Field fNome;
-	private Field fCognome;
-	private Field fEmail;
-	private Field fUsername;
-	private Field fPassword;
-	private Field fRipetiPassword;
+	private FieldGroup fgroup;
 	
 	public Register(Home home) {
 		super("Register", "Confirm", true, home);
 						
-		fNome = new Field("Nome");
-		fCognome = new Field("Cognome");
-		fUsername = new Field("Username");
-		fEmail = new Field("Email");
-		fPassword = new Field("Password", true);
-		fRipetiPassword = new Field("Ripeti password", true);
+		fgroup = new FieldGroup(6);
+		fgroup.add("Nome");
+		fgroup.add("Cognome");
+		fgroup.add("Email");
+		fgroup.add("Username");
+		fgroup.add("Password", true);
+		fgroup.add("Ripeti password", true);
 		
-		body.add(Field.sPanel);
+		body.add(fgroup.getPanel());
 		super.setBounds(400, 300, 800, 400);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		try {
-			if (!fPassword.getText().equals(fRipetiPassword.getText())) {
-				throw new Exception("Ripeti password non corrisponente");
-			}
-			Account a = new Account(fNome.getText(), fCognome.getText(), fEmail.getText(), fUsername.getText(), fPassword.getText());
-			dispose();
-			new Home(a);
+			System.out.println("ASD");
+			
 		} catch (Exception e2) {
 			System.out.println(e2);
 		}
