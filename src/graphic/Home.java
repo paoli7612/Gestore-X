@@ -40,7 +40,7 @@ public class Home extends Window {
 	public Home(Account a) {
 		this();
 	}
-	
+		
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
