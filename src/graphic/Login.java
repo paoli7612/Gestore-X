@@ -13,25 +13,19 @@ import javax.swing.plaf.DimensionUIResource;
 import javax.swing.text.AttributeSet.ColorAttribute;
 
 import accountManager.Account;
+import accountManager.App;
 
-public class Register extends Window {
+public class Login extends Window {
 
-	private Field fNome;
-	private Field fCognome;
-	private Field fEmail;
+
 	private Field fUsername;
 	private Field fPassword;
-	private Field fRipetiPassword;
 	
-	public Register(Home home) {
-		super("Register", "Confirm", true, home);
+	public Login(Home home) {
+		super("Login", "Confirm", true, home);
 						
-		fNome = new Field("Nome");
-		fCognome = new Field("Cognome");
 		fUsername = new Field("Username");
-		fEmail = new Field("Email");
 		fPassword = new Field("Password", true);
-		fRipetiPassword = new Field("Ripeti password", true);
 		
 		body.add(Field.sPanel);
 		super.setBounds(400, 300, 800, 400);
@@ -40,12 +34,7 @@ public class Register extends Window {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		try {
-			if (!fPassword.getText().equals(fRipetiPassword.getText())) {
-				throw new Exception("Ripeti password non corrisponente");
-			}
-			Account a = new Account(fNome.getText(), fCognome.getText(), fEmail.getText(), fUsername.getText(), fPassword.getText());
 			dispose();
-			new Home(a);
 		} catch (Exception e2) {
 			System.out.println(e2);
 		}

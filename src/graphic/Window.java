@@ -16,7 +16,7 @@ public abstract class Window extends JFrame implements ActionListener {
 	protected JPanel body;
 	private JPanel footer;
 	
-	public Window(String name, String text_submit, boolean bback) {
+	public Window(String name, String text_submit, boolean bback, Window window) {
 		super(name);
 		
 		header = new JPanel();
@@ -25,7 +25,6 @@ public abstract class Window extends JFrame implements ActionListener {
 		
 		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		super.setResizable(false);
-		super.setVisible(true);
 		super.pack();
 		
 		
@@ -43,9 +42,9 @@ public abstract class Window extends JFrame implements ActionListener {
 			JButton exit = new JButton("Back");
 			exit.addActionListener((ActionListener) new ActionListener() {
 				@Override
-				public void actionPerformed(ActionEvent e) {
-					new Home();
+				public void actionPerformed(ActionEvent e) {			
 					dispose();
+					window.setVisible(true);
 				}
 			});
 			footer.add(exit);
@@ -56,11 +55,11 @@ public abstract class Window extends JFrame implements ActionListener {
 		this.add(footer, BorderLayout.SOUTH);
 	}
 	
-	public Window(String name, String text_submit) {
-		this(name, text_submit, false);
+	public Window(String name, String text_submit, Window window) {
+		this(name, text_submit, false, window);
 	}
 	
 	public Window(String name) {
-		this(name, null);
+		this(name, null, null);
 	}
 }

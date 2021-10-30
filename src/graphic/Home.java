@@ -11,24 +11,29 @@ import accountManager.Account;
 
 public class Home extends Window {
 	
+	private Login login = new Login(this);
+	private Register register = new Register(this);
+	
 	public Home() {
 		super("Home");
+		setVisible(true);
 		
 		JButton aRegister = new JButton("New account");
 		aRegister.addActionListener((ActionListener) new ActionListener() {
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-		        new Register();
+		        register.setVisible(true);
 		        dispose();
 		    }
 		});
+		
 		body.add(aRegister);
 		
 		JButton aLogin = new JButton("Login");
 		aLogin.addActionListener((ActionListener) new ActionListener() {
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-		        //new Login();
+		    	login.setVisible(true);
 		        dispose();
 		    }
 		});
