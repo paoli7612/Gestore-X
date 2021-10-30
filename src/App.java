@@ -1,18 +1,17 @@
-import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
-import accountManager.Persona;
+import accountManager.Account;
 import graphic.Home;
-import graphic.Register;
 
 public class App {
 
-	public static void main(String[] args) {
-		Persona persona = new Persona("Tommaso", "Paoli");
-		persona.setMatricola("152542");
-		persona.setNascita("21/05/2000");
-		System.out.println(persona.toString());
+	private static List<Account> accounts = new ArrayList<Account>();
 		
+	public static void main(String[] args) {
+		Account a = new Account("Tommaso", "Paoli", "paoli7612@gmail.com", "tomaoli", "qwerty");
+		accounts.add(a);
+		System.out.println(accounts.get(0).toString());
 		new Home();
-	}
-	
+	}	 
 }

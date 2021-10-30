@@ -7,8 +7,10 @@ import java.awt.BorderLayout;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 
-public class Home extends Window {
+import accountManager.Account;
 
+public class Home extends Window {
+	
 	public Home() {
 		super("Home");
 		
@@ -33,6 +35,10 @@ public class Home extends Window {
 		body.add(aLogin);
 		
 		super.setBounds(400, 300, 800, 400);
+	}
+	
+	public Home(Account a) {
+		this();
 	}
 	
 	@Override

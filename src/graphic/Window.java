@@ -26,6 +26,7 @@ public abstract class Window extends JFrame implements ActionListener {
 		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		super.setResizable(false);
 		super.setVisible(true);
+		super.pack();
 		
 		
 		JLabel title = new JLabel(name);

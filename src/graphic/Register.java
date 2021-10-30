@@ -12,6 +12,8 @@ import javax.swing.event.DocumentListener;
 import javax.swing.plaf.DimensionUIResource;
 import javax.swing.text.AttributeSet.ColorAttribute;
 
+import accountManager.Account;
+
 public class Register extends Window {
 
 	private Field fNome;
@@ -22,12 +24,12 @@ public class Register extends Window {
 	private Field fRipetiPassword;
 	
 	public Register() {
-		super("Register");
+		super("Register", "Confirm", true);
 						
 		fNome = new Field("Nome");
 		fCognome = new Field("Cognome");
-		fEmail = new Field("Email");
 		fUsername = new Field("Username");
+		fEmail = new Field("Email");
 		fPassword = new Field("Password", true);
 		fRipetiPassword = new Field("Ripeti password", true);
 		
@@ -37,9 +39,17 @@ public class Register extends Window {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println(
-				fNome.getText() + " " + fCognome.getText()
-				);
+		try {
+			if (!fPassword.getText().equals(fRipetiPassword.getText())) {
+				throw new Exception("Ripeti password non corrisponente");
+			}
+			Account a = new Account(fNome.getText(), fCognome.getText(), fEmail.getText(), fUsername.getText(), fPassword.getText());
+			dispose();
+			new Home(a);
+		} catch (Exception e2) {
+			System.out.println(e2);
+		}
+		
 	}
 	
 }
