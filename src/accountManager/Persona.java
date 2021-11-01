@@ -1,15 +1,17 @@
 package accountManager;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class Persona {
-	
+public class Persona implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	private String nome;
 	private String cognome;
 	private Date nascita;
 	private char matricola[];
 	
-	public Persona(String nome, String cognome) {
+	public Persona(String nome, String cognome){
 		this.nome = nome;
 		this.cognome = cognome;
 		this.matricola = new char[6];
@@ -70,5 +72,4 @@ public class Persona {
 			ret += " " + this.nascita.toString();
 		return ret + ">";
 	}
-
 }
