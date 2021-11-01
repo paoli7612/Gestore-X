@@ -11,6 +11,8 @@ public class App {
 	public static List<Account> accounts = data.load();;
 	public static Home home;
 	
+	public static Account login;
+	
 	public static void print() {
 		for (int i=0; i<accounts.size(); i++)
 		{
@@ -32,24 +34,39 @@ public class App {
 		accounts.add(a);
 	}
 	
-	public static Integer login(String username, String password) {
+	public static Account getUser(String username) { // or email
 		for (int i=0; i<accounts.size(); i++) {
 			Account a = accounts.get(i);
 			if (a.getUsername().equals(username) || a.getEmail().equals(username)) {
-				if (a.controlPassword(password)) {
-					return a.id;
-				}
+				return a;
 			}
 		}
 		return null;
 	}
 	
-	public static boolean register(Account a) {
-		if (accounts.add(a)) {
-			data.save(accounts);
+	public static boolean login(String username, String password) {
+		
+		Account a = getUser(username);
+		if (a != null && a.controlPassword(password)) {
+			App.login = a;
 			return true;
 		} else {
 			return false;
+		}
+		
+	}
+	
+	public static boolean register(Account a) throws Exception {
+		
+		if (getUser(a.getUsername()) != null || getUser(a.getEmail()) != null)
+			throw new Exception("Email o username gia utilizzati");
+		else {			
+			if (accounts.add(a)) {
+				data.save(accounts);
+				return true;
+			} else {
+				return false;
+			}
 		}
 	}
 }

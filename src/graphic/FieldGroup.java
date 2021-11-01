@@ -44,4 +44,10 @@ public class FieldGroup {
 		return fields.get(key).getText();
 	}
 	
+	public void reset() {
+		for (int i=0; i<fields.size(); i++) {
+			fields.get(i).reset();
+		}
+	}
+	
 }

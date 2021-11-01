@@ -34,11 +34,15 @@ public class Login extends Window {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		try {
-			Integer id = App.login(fgroup.getText(0), fgroup.getText(1));
-			if (id != null) {
-				System.out.println("Login");
+			;
+			if (App.login(fgroup.getText(0), fgroup.getText(1))) {
+				System.out.println("Login effettuato come " + App.login.toString());
+				this.setVisible(false);
+				App.home.setVisible(true);		
+			} else {
+				System.out.println("Login fallito");
+				fgroup.reset();
 			}
-			dispose();
 		} catch (Exception e2) {
 			System.out.println(e2);
 		}

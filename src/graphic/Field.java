@@ -44,4 +44,9 @@ public class Field {
 	public String getText() {
 		return this.input.getText();
 	}
+	
+	public void reset() {
+		this.input.setText("");
+	}
 }
+

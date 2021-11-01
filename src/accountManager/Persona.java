@@ -41,6 +41,7 @@ public class Persona implements Serializable {
 		this.nascita = nascita;
 	}
 	
+	@SuppressWarnings("deprecation")
 	public void setNascita(Integer day, Integer month, Integer year) {
 		this.setNascita(new Date(year, month, day));
 	}

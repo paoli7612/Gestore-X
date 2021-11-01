@@ -38,23 +38,26 @@ public class Register extends Window {
 	public void actionPerformed(ActionEvent e) {
 		try {
 			if (fgroup.getText("Password").equals(fgroup.getText("Ripeti password"))) {
-				App.register(
-						new Account(
-							fgroup.getText(0), // nome
-							fgroup.getText(1), // cognome
-							fgroup.getText(2), // email
-							fgroup.getText(3), // username
-							fgroup.getText(4)  // password
-						)
-					);
-				App.home.setVisible(true);
-				this.setVisible(false);
+				try {
+					App.register(
+							new Account(
+								fgroup.getText(0), // nome
+								fgroup.getText(1), // cognome
+								fgroup.getText(2), // email
+								fgroup.getText(3), // username
+								fgroup.getText(4)  // password
+							)
+						);
+					this.setVisible(false);					
+					App.home.setVisible(true);
+				} catch (Exception e2) {
+					System.out.println(e2);
+				}
 			} else {
 				throw new Exception("Password ripetuta differentemente");
 			}
-			
 		} catch (Exception e2) {
-			System.out.println(e2);
+			fgroup.reset();
 		}
 		
 	}
