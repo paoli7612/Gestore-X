@@ -1,15 +1,13 @@
 package accountManager;
-
-import java.util.ArrayList;
 import java.util.List;
 
-import graphic.Home;
+import graphic.Welcome;
 
 public class App {
 
 	public static Data data = new Data("asd");
 	public static List<Account> accounts = data.load();;
-	public static Home home;
+	public static Welcome welcome;
 	
 	public static Account login;
 	
@@ -20,14 +18,8 @@ public class App {
 		}
 	}
 	
-	public static void exec() {
-
-		
-		if (accounts == null) {
-			System.out.println("Errore nel caricamento del'archivio");
-		} else {
-			home = new Home();			
-		}
+	public static void welcome() {
+		welcome = new Welcome();			
 	}
 	
 	public static void add(Account a) {

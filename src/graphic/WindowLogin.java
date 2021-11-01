@@ -15,11 +15,11 @@ import javax.swing.text.AttributeSet.ColorAttribute;
 import accountManager.Account;
 import accountManager.App;
 
-public class Login extends Window {
+public class WindowLogin extends Window {
 
 	private FieldGroup fgroup;
 	
-	public Login(Home home) {
+	public WindowLogin(Welcome home) {
 		super("Login", "Confirm", true, home);
 		
 		fgroup = new FieldGroup(2);
@@ -38,7 +38,7 @@ public class Login extends Window {
 			if (App.login(fgroup.getText(0), fgroup.getText(1))) {
 				System.out.println("Login effettuato come " + App.login.toString());
 				this.setVisible(false);
-				App.home.setVisible(true);		
+				new WindowHome();
 			} else {
 				System.out.println("Login fallito");
 				fgroup.reset();

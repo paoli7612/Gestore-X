@@ -22,6 +22,11 @@ public class FieldGroup {
 		fields.add(field);
 	}
 	
+	public void add(String title, String value) {
+		Field field = new Field(panel, title, value);
+		fields.add(field);
+	}
+	
 	public void add(String title) {
 		add(title, false);
 	}

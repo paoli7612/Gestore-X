@@ -10,13 +10,13 @@ import javax.swing.JButton;
 import accountManager.Account;
 import accountManager.Data;
 
-public class Home extends Window {
+public class Welcome extends Window {
 	
-	private Login login = new Login(this);
-	private Register register = new Register(this);
+	private WindowLogin login = new WindowLogin(this);
+	private WindowRegister register = new WindowRegister(this);
 	
-	public Home() {
-		super("Home");
+	public Welcome() {
+		super("Welcome");
 		setVisible(true);
 		
 		JButton aRegister = new JButton("New account");
@@ -27,7 +27,6 @@ public class Home extends Window {
 		        dispose();
 		    }
 		});
-		
 		body.add(aRegister);
 		
 		JButton aLogin = new JButton("Login");
@@ -46,8 +45,6 @@ public class Home extends Window {
 		
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-
 	}
 
 }

@@ -1,6 +1,7 @@
 import accountManager.Account;
 import accountManager.App;
 import accountManager.Data;
+import graphic.WindowHome;
 
 public class Main {
 	
@@ -9,8 +10,11 @@ public class Main {
 			if (args[0].equals("print")) {
 				App.print();
 			}
-		} else {			
-			App.exec();
+		} else if (args.length == 2) {
+			App.login(args[0], args[1]);
+			new WindowHome();
+		} else {
+			App.welcome();
 		}
 	}
 }

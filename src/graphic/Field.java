@@ -40,6 +40,11 @@ public class Field {
 	public Field(JPanel panel, String title) {
 		this(panel, title, false);
 	}
+	
+	public Field(JPanel panel, String title, String value) {
+		this(panel, title);
+		input.setText(value);
+	}
 		
 	public String getText() {
 		return this.input.getText();
