@@ -14,8 +14,11 @@ public class Field {
 
 	private JTextField input;
 	private JLabel label;
+	public String title;
 	
 	public Field(JPanel panel, String title, boolean isPassword) {
+	
+		this.title = title;
 		
 		if (isPassword) {
 			input = new JPasswordField(16);

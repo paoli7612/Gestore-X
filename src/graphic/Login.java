@@ -27,13 +27,17 @@ public class Login extends Window {
 		fgroup.add("Password", true);
 		
 		body.add(fgroup.getPanel());
+		App.print();
 		super.setBounds(400, 300, 800, 400);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		try {
-			System.out.println(App.accounts.get(0).toString());
+			Integer id = App.login(fgroup.getText(0), fgroup.getText(1));
+			if (id != null) {
+				System.out.println("Login");
+			}
 			dispose();
 		} catch (Exception e2) {
 			System.out.println(e2);

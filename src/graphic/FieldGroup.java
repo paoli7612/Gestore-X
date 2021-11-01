@@ -30,5 +30,18 @@ public class FieldGroup {
 		return this.panel;
 	}
 	
+	public String getText(String title) {
+		for (int i=0; i<fields.size(); i++) {
+			Field f = fields.get(i);
+			if (f.title.equals(title)) {
+				return f.getText();
+			}
+		}
+		return null;
+	}
+	
+	public String getText(Integer key) {
+		return fields.get(key).getText();
+	}
 	
 }

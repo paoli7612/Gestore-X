@@ -5,6 +5,12 @@ import accountManager.Data;
 public class Main {
 	
 	public static void main(String[] args) {
-		App.exec();
+		if (args.length == 1) {
+			if (args[0].equals("print")) {
+				App.print();
+			}
+		} else {			
+			App.exec();
+		}
 	}
 }

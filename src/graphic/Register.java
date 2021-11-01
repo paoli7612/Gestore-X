@@ -13,6 +13,7 @@ import javax.swing.plaf.DimensionUIResource;
 import javax.swing.text.AttributeSet.ColorAttribute;
 
 import accountManager.Account;
+import accountManager.App;
 
 public class Register extends Window {
 
@@ -36,7 +37,21 @@ public class Register extends Window {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		try {
-			System.out.println("ASD");
+			if (fgroup.getText("Password").equals(fgroup.getText("Ripeti password"))) {
+				App.register(
+						new Account(
+							fgroup.getText(0), // nome
+							fgroup.getText(1), // cognome
+							fgroup.getText(2), // email
+							fgroup.getText(3), // username
+							fgroup.getText(4)  // password
+						)
+					);
+				App.home.setVisible(true);
+				this.setVisible(false);
+			} else {
+				throw new Exception("Password ripetuta differentemente");
+			}
 			
 		} catch (Exception e2) {
 			System.out.println(e2);
