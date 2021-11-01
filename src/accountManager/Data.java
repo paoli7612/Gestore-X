@@ -1,4 +1,4 @@
-package storage;
+package accountManager;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -7,8 +7,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-
-import accountManager.Account;
 
 public class Data {
 	

@@ -33,6 +33,7 @@ public class Login extends Window {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		try {
+			System.out.println(App.accounts.get(0).toString());
 			dispose();
 		} catch (Exception e2) {
 			System.out.println(e2);

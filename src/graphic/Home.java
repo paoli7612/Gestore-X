@@ -8,6 +8,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 
 import accountManager.Account;
+import accountManager.Data;
 
 public class Home extends Window {
 	
@@ -42,9 +43,6 @@ public class Home extends Window {
 		super.setBounds(400, 300, 800, 400);
 	}
 	
-	public Home(Account a) {
-		this();
-	}
 		
 	@Override
 	public void actionPerformed(ActionEvent e) {

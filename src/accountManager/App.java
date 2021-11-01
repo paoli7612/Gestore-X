@@ -7,9 +7,12 @@ import graphic.Home;
 
 public class App {
 
-	private static List<Account> accounts = new ArrayList<Account>();
+	public static List<Account> accounts = new ArrayList<Account>();
+	public static Data data = new Data("asd");
 	
 	public static void exec() {
+		Account a = new Account("Tommaso", "Paoli", "paoli7612@gmail.com", "tomaoli", "qwerty");
+		accounts.add(a);
 		new Home();
 	}
 	
