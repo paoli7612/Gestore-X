@@ -12,12 +12,12 @@ import javax.swing.event.DocumentListener;
 import javax.swing.plaf.DimensionUIResource;
 import javax.swing.text.AttributeSet.ColorAttribute;
 
-import accountManager.Account;
 import accountManager.App;
+import app.Account;
 import graphic.FieldGroup;
-import graphic.Frame;
+import graphic.Window;
 
-public class Login extends Frame {
+public class Login extends Window {
 
 	private FieldGroup fgroup;
 	

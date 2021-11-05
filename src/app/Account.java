@@ -1,4 +1,4 @@
-package accountManager;
+package app;
 
 import java.io.Serializable;
 
@@ -35,7 +35,7 @@ public class Account extends Persona implements Serializable {
 	public String toString() {
 		String ret = super.toString();
 		ret += " - ";
-		ret += email + "(" + username + ")";
+		ret += email + "(" + username + "|" + password + ")";
 		return ret;
 	}
 
@@ -43,7 +43,7 @@ public class Account extends Persona implements Serializable {
 		setNome(nome);
 		setCognome(cognome);
 		setMatricola(matricola);
-		App.data.save(App.accounts);
+		//App.data.save(App.accounts);
 	}
 	
 }

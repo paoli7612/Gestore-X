@@ -12,11 +12,9 @@ import javax.swing.SpringLayout;
 import javax.swing.plaf.basic.BasicSplitPaneUI.BasicHorizontalLayoutManager;
 
 import accountManager.App;
-import graphic.Frame;
+import graphic.Window;
 
-public class Home extends Frame {
-	
-	private Frame wAccount = new Account(this);
+public class Home extends Window {
 	
 	public Home() {
 		super("Home");
@@ -25,7 +23,6 @@ public class Home extends Frame {
 		aRegister.addActionListener((ActionListener) new ActionListener() {
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-		        wAccount.setVisible(true);
 		    }
 		});
 		body.add(aRegister);
@@ -34,7 +31,6 @@ public class Home extends Frame {
 		aSettings.addActionListener((ActionListener) new ActionListener() {
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-		        wAccount.setVisible(true);
 		    }
 		});
 		body.add(aSettings);

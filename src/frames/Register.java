@@ -2,12 +2,12 @@ package frames;
 
 import java.awt.event.ActionEvent;
 
-import accountManager.Account;
 import accountManager.App;
+import app.Account;
 import graphic.FieldGroup;
-import graphic.Frame;
+import graphic.Window;
 
-public class Register extends Frame {
+public class Register extends Window {
 
 	private FieldGroup fgroup;
 	

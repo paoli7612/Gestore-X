@@ -10,13 +10,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public abstract class Frame extends JFrame implements ActionListener {
+public abstract class Window extends JFrame implements ActionListener {
 
 	private JPanel header;
 	protected JPanel body;
 	private JPanel footer;
 	
-	public Frame(String name, String text_submit, boolean bback) {
+	public Window(String name, String text_submit, boolean bback) {
 		super(name);
 		
 		header = new JPanel();
@@ -54,11 +54,19 @@ public abstract class Frame extends JFrame implements ActionListener {
 		this.add(footer, BorderLayout.SOUTH);
 	}
 	
-	public Frame(String name, String text_submit) {
+	public Window(String name, String text_submit) {
 		this(name, text_submit, false);
 	}
 	
-	public Frame(String name) {
+	public Window(String name) {
 		this(name, null);
+	}
+	
+	public void show() {
+		this.setVisible(true);
+	}
+	
+	public void hide() {
+		this.setVisible(false);
 	}
 }

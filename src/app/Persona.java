@@ -1,4 +1,4 @@
-package accountManager;
+package app;
 
 import java.io.Serializable;
 import java.sql.Date;

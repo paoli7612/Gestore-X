@@ -2,11 +2,11 @@ package frames;
 
 import java.awt.event.ActionEvent;
 
-import accountManager.App;
+import app.App;
 import graphic.FieldGroup;
-import graphic.Frame;
+import graphic.Window;
 
-public class Account extends Frame {
+public class Account extends Window {
 
 	private FieldGroup fgroup;
 	
@@ -15,7 +15,7 @@ public class Account extends Frame {
 		
 		fgroup = new FieldGroup(3);
 		
-		accountManager.Account a = App.login;
+		app.Account a = App.login;
 		fgroup.add("Nome", a.getNome());
 		fgroup.add("Cognome", a.getCognome());
 		fgroup.add("Matricola");
@@ -26,9 +26,9 @@ public class Account extends Frame {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		try {
-			App.login.edit(fgroup.getText(0), 	// Nome
-					fgroup.getText(1),	// Cognome
-					fgroup.getText(2));	// Matricola
+			App.account.edit(fgroup.getText(0), 	// Nome
+							fgroup.getText(1),		// Cognome
+							fgroup.getText(2));		// Matricola
 		} catch (Exception e2) {
 			// TODO: handle exception
 		}

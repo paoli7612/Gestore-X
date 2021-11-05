@@ -7,11 +7,11 @@ import java.awt.BorderLayout;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 
-import accountManager.Account;
-import accountManager.Data;
-import graphic.Frame;
+import app.Account;
+import app.Data;
+import graphic.Window;
 
-public class Welcome extends Frame {
+public class Welcome extends Window {
 	
 	private Login login = new Login(this);
 	private Register register = new Register(this);
