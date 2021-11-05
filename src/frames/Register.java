@@ -1,16 +1,18 @@
-package graphic;
+package frames;
 
 import java.awt.event.ActionEvent;
 
 import accountManager.Account;
 import accountManager.App;
+import graphic.FieldGroup;
+import graphic.Frame;
 
-public class WindowRegister extends Window {
+public class Register extends Frame {
 
 	private FieldGroup fgroup;
 	
-	public WindowRegister(Welcome welcome) {
-		super("Register", "Confirm", true, welcome);
+	public Register() {
+		super("Register", "Confirm", true);
 						
 		fgroup = new FieldGroup(6);
 		fgroup.add("Nome");

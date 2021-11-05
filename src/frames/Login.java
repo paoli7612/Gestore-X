@@ -1,4 +1,4 @@
-package graphic;
+package frames;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -14,13 +14,15 @@ import javax.swing.text.AttributeSet.ColorAttribute;
 
 import accountManager.Account;
 import accountManager.App;
+import graphic.FieldGroup;
+import graphic.Frame;
 
-public class WindowLogin extends Window {
+public class Login extends Frame {
 
 	private FieldGroup fgroup;
 	
-	public WindowLogin(Welcome home) {
-		super("Login", "Confirm", true, home);
+	public Login() {
+		super("Login", "Confirm", true);
 		
 		fgroup = new FieldGroup(2);
 		fgroup.add("Username");
@@ -38,7 +40,7 @@ public class WindowLogin extends Window {
 			if (App.login(fgroup.getText(0), fgroup.getText(1))) {
 				System.out.println("Login effettuato come " + App.login.toString());
 				this.setVisible(false);
-				new WindowHome();
+				new Home();
 			} else {
 				System.out.println("Login fallito");
 				fgroup.reset();

@@ -1,4 +1,4 @@
-package graphic;
+package frames;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,11 +9,12 @@ import javax.swing.JButton;
 
 import accountManager.Account;
 import accountManager.Data;
+import graphic.Frame;
 
-public class Welcome extends Window {
+public class Welcome extends Frame {
 	
-	private WindowLogin login = new WindowLogin(this);
-	private WindowRegister register = new WindowRegister(this);
+	private Login login = new Login(this);
+	private Register register = new Register(this);
 	
 	public Welcome() {
 		super("Welcome");

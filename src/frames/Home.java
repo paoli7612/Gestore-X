@@ -1,4 +1,4 @@
-package graphic;
+package frames;
 
 import java.awt.event.ActionEvent;
 import java.awt.BorderLayout;
@@ -12,12 +12,13 @@ import javax.swing.SpringLayout;
 import javax.swing.plaf.basic.BasicSplitPaneUI.BasicHorizontalLayoutManager;
 
 import accountManager.App;
+import graphic.Frame;
 
-public class WindowHome extends Window {
+public class Home extends Frame {
 	
-	private Window wAccount = new WindowAccount(this);
+	private Frame wAccount = new Account(this);
 	
-	public WindowHome() {
+	public Home() {
 		super("Home");
 		
 		JButton aRegister = new JButton("My account");

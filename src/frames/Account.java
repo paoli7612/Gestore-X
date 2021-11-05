@@ -1,15 +1,17 @@
-package graphic;
+package frames;
 
 import java.awt.event.ActionEvent;
 
 import accountManager.App;
+import graphic.FieldGroup;
+import graphic.Frame;
 
-public class WindowAccount extends Window {
+public class Account extends Frame {
 
 	private FieldGroup fgroup;
 	
-	public WindowAccount(WindowHome home) {
-		super("My Account", "Save", true, home);
+	public Account() {
+		super("My Account", "Save", true);
 		
 		fgroup = new FieldGroup(3);
 		

@@ -1,5 +1,7 @@
 import accountManager.App;
-import graphic.WindowHome;
+import frames.Home;
+import frames.Welcome;
+import graphic.Frame;
 
 public class Main {
 	
@@ -10,9 +12,10 @@ public class Main {
 			}
 		} else if (args.length == 2) {
 			App.login(args[0], args[1]);
-			new WindowHome();
+			App.window(App.Welcome);
 		} else {
-			App.welcome();
+			App.window(App.Home);
 		}
 	}
+	
 }
