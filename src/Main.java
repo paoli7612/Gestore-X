@@ -1,6 +1,4 @@
-import accountManager.Account;
 import accountManager.App;
-import accountManager.Data;
 import graphic.WindowHome;
 
 public class Main {

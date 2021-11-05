@@ -12,6 +12,7 @@ public class App {
 	public static Account login;
 	
 	public static void print() {
+		System.out.println("Totale: " + accounts.size());
 		for (int i=0; i<accounts.size(); i++)
 		{
 			System.out.println(accounts.get(i).toString());

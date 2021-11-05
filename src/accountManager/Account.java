@@ -38,5 +38,12 @@ public class Account extends Persona implements Serializable {
 		ret += email + "(" + username + ")";
 		return ret;
 	}
+
+	public void edit(String nome, String cognome, String matricola) {
+		setNome(nome);
+		setCognome(cognome);
+		setMatricola(matricola);
+		App.data.save(App.accounts);
+	}
 	
 }

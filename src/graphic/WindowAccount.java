@@ -23,7 +23,14 @@ public class WindowAccount extends Window {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		try {
+			App.login.edit(fgroup.getText(0), 	// Nome
+					fgroup.getText(1),	// Cognome
+					fgroup.getText(2));	// Matricola
+		} catch (Exception e2) {
+			// TODO: handle exception
+		}
 
 	}
+	
 }
