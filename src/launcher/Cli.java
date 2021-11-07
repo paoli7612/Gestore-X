@@ -4,23 +4,16 @@ import java.util.Scanner;
 
 import gestore.App;
 
-public class Cli  {
+public class Cli extends App {
 
-	private static App app;
-
-	public static void main(String[] args) {
-			
-		String filename_data = ask("File di dati: ");
-		try {
-			app = new App(filename_data);			
-		} catch (Exception e) {
-			System.out.println(e.toString());
-		}
-				
+	public Cli() throws Exception {
+		
+		super(ask("File di dati: "));			
+						
 		boolean running = true;
 		while (running) {
 			try {
-				if (app.isAuth()) {
+				if (isAuth()) {
 					running = home();
 				} else {
 					running = welcome();
@@ -28,19 +21,20 @@ public class Cli  {
 			} catch (Exception e) {
 				System.out.println("[!!! Errore !!!]");
 				System.out.println(e.toString());
-			}
-			
+			}	
 		}
+		
+		System.out.println("Programma terminato");
 		
 	}
 	
-	private static boolean home() throws Exception {
+	private boolean home() throws Exception {
 		println("1: Login\n2: Register\n3: Print\n4: Exit");
 		switch (getInteger()) {
 			case 1: {
 				String username = ask("Username: ");
 				String password = ask("Password: ");
-				app.login(username, password);
+				login(username, password);
 				break;
 			}
 			
@@ -48,12 +42,12 @@ public class Cli  {
 				String username = ask("Username: ");
 				String password = ask("Password: ");
 				String ripeti = ask("Ripeti password: ");
-				app.register(username, password, ripeti);
+				register(username, password, ripeti);
 				break;
 			}
 			
 			case 3: {
-				System.out.print(app.toString());
+				System.out.print(this.toString());
 				break;
 			}
 			case 4: {
@@ -67,13 +61,13 @@ public class Cli  {
 		return true;	
 	}
 	
-	private static boolean welcome() throws Exception {
+	private boolean welcome() throws Exception {
 		println("1: Login\n2: Register\n3: Print\n4: Exit");
 		switch (getInteger()) {
 			case 1: {
 				String username = ask("Username: ");
 				String password = ask("Password: ");
-				app.login(username, password);
+				login(username, password);
 				break;
 			}
 			
@@ -81,12 +75,12 @@ public class Cli  {
 				String username = ask("Username: ");
 				String password = ask("Password: ");
 				String ripeti = ask("Ripeti password: ");
-				app.register(username, password, ripeti);
+				register(username, password, ripeti);
 				break;
 			}
 			
 			case 3: {
-				System.out.print(app.toString());
+				System.out.print(this.toString());
 				break;
 			}
 			case 4: {
