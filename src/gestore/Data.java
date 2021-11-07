@@ -1,4 +1,4 @@
-package app;
+package gestore;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -40,27 +40,10 @@ public class Data {
 		oos.close();
 		fos.close();
 	}
-	
-	public void save(List<Account> a) {
-		try {
-			write(a);
-		} catch (Exception e) {
-			System.out.println("Errore salvataggio degli account");
-		}
-	}
-	
-	public List<Account> load() {
-		try {
-			return read();
-		} catch (Exception e) {
-			try {				
-				this.write(new ArrayList<Account>());
-			} catch (Exception e2) {
-				System.out.println("Errore critico");
-				return null;
-			}
-			return this.load();
-		}
-	}
 
+	public void reset() throws Exception {
+		this.write(new ArrayList<Account>());
+		
+	}
+	
 }

@@ -1,22 +1,22 @@
-import app.App;
+import gestore.App;
 
 public class Main {
 	
 	public static void main(String[] args) {
+
 		try {
-			if (args.length == 1) {
-				if (args[0].equals("print")) {
-					App.print();
-				}
-			} else if (args.length == 2) {
-				App.login(args[0], args[1]);
-				App.home();
-			} else {
-				App.welcome();
-			}			
+			
+			App app = new App("asd");
+							
+			app.login("2000iloapi@gmail.com", "qwerty");
+
+			System.out.println(app.toString());
+			
+			
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
+		
 	}
 	
 }
