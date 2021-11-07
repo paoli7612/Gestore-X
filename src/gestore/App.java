@@ -51,6 +51,14 @@ public class App {
 			throw new Exception("Username gia utilizzato");
 		}
 	}
+	
+	public void register(String username, String password, String ripeti) throws Exception {
+		if (password.equals(ripeti)) {			
+			register(username, password);
+		} else {
+			throw new Exception("Le password inserite non corrispondono");
+		}
+	}
 
 	public void login(Credenziali credenziali) throws Exception {
 		login(credenziali.getUsername(), credenziali.getPassword());
@@ -60,14 +68,18 @@ public class App {
 		register(credenziali.getUsername(), credenziali.getPassword());
 	}
 	
+	public boolean isAuth() {
+		return this.account != null;
+	}
+	
 	@Override
 	public String toString() {
 		String ret = new String();
 		
-		if (this.account == null) {			
-			ret += "Non autenticato" + "\n";
-		} else {
+		if (isAuth()) {			
 			ret += "Autenticato: " + this.account.getUsername() + " " + "\n";
+		} else {
+			ret += "Non autenticato" + "\n";
 		}
 		
 		ret += "\tAccount salvati: " + accounts.size() + "\n";
