@@ -7,7 +7,7 @@ public class App {
 
 	private Data data;
 	private List<Account> accounts;
-	private Account account;
+	protected Account account;
 	
 	public App(String filename_data) throws Exception {
 		this.data = new Data(filename_data);
@@ -27,6 +27,14 @@ public class App {
 	
 	private void save() throws Exception {
 		this.data.write(accounts);
+	}
+	
+	public void logout() throws Exception {
+		if (!isAuth()) {
+			throw new Exception("Non autenticato. Impossibile fare il logout");			
+		} else {
+			this.account = null;
+		}
 	}
 	
 	public void login(String username, String password) throws Exception {
@@ -105,6 +113,9 @@ public class App {
 	
 	private boolean existAccount(String username) {
 		return getAccount(username) != null;
+	}
+	
+	public void run() {
 	}
 	
 }
