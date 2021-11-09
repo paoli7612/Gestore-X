@@ -42,6 +42,10 @@ public class Data {
 	}
 
 	public void reset() throws Exception {
+		File directory = new File("./data/");
+	    if (! directory.exists()){
+	        directory.mkdir();
+	    }
 		this.write(new ArrayList<Account>());
 		
 	}
